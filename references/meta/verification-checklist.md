@@ -26,3 +26,11 @@
 
 - [ ] 导出格式已按用户需求生成（HTML / Excel）
 - [ ] Creative Pack 文件路径可访问
+
+
+## 编译产物表演交付门禁
+
+- 每个源执行分画都有 performance/reaction 的适用决定及理由。
+- 源拍、在画演员与最终指令一一可追溯，指令实际进入 compiled_prompt。
+- 编译预览导出前 `scripts/acting_contract.py --input project_state.json` 通过；不得只核字段存在。
+- 空镜、旁白、手部插入镜及拆分分画不套用旧整场反应。

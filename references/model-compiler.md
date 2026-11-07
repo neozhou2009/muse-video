@@ -500,3 +500,8 @@ shot_S03: first_frame_ref = storyboard_S03.png
 ## 测试要求
 
 8. **至少 1 个实测案例**：用实际 Creative Package 编译并验证
+
+
+## 表演与反应不得静默丢失（v0.36.8）
+
+编译前按 [表演与反应交付契约](acting-delivery.md) 审核 performance/reaction 的适用性。每拍分别记录 included 或 not_applicable、理由及在画演员；审阅后的指令进入最终 compiled_prompt，并保留源文本与改写依据。所有临时适配器及项目自写编译器同样适用。编译交付前必须运行 `python scripts/acting_contract.py --input project_state.json`；正文只剩标题、源拍遗漏、字段漏编译或画外演员泄入均应阻止导出。该检查不替代导演创意审核。

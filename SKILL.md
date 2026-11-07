@@ -1,7 +1,7 @@
 ---
 name: muse-video
 description: "When the user asks to 策划/构思/设计/写脚本/画分镜 for a video project — e.g. '帮我策划一个广告创意' '这个产品演示视频怎么拍' '帮我写科幻短片的分镜脚本' '给我这个品牌TVC的美术方向'。Not for actual video rendering/compositing or AI image/video generation."
-version: 0.36.7
+version: 0.36.8
 author: Hermes Agent + 钱多多
 license: MIT
 platforms: [linux, macos, windows]
@@ -91,3 +91,5 @@ metadata:
 ## 产出验证
 
 > 见 `references/meta/verification-checklist.md`。
+
+编译交付必须遵循 [表演与反应交付契约](references/acting-delivery.md)，对每个执行分画记录两字段的适用决定并运行 `scripts/acting_contract.py --input project_state.json`；禁止仅检查文件、镜号或字段存在而忽略成品正文。

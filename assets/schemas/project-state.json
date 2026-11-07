@@ -567,6 +567,7 @@
       "type": "object",
       "description": "Model Compiler output — Phase 7.5. Compiles Creative Package into model-specific execution instructions. Read-only consumer of upstream data. Does not execute network requests.",
       "properties": {
+        "acting_source_ids": {"type": "array", "items": {"type": "string"}, "description": "All source visual-unit IDs expected in acting delivery"},
         "_meta": {
           "type": "object",
           "properties": {
@@ -605,6 +606,8 @@
             "type": "object",
             "required": ["shot_id", "compiled_prompt"],
             "properties": {
+            "visual_units": {"type": "array", "items": {"type": "string"}},
+            "acting_beats": {"type": "array", "items": {"type": "object", "required": ["id", "visible_cast", "performance", "reaction"], "properties": {"id": {"type": "string"}, "visible_cast": {"type": "array", "items": {"type": "string"}}, "performance": {"$ref": "#/$defs/acting_decision"}, "reaction": {"$ref": "#/$defs/acting_decision"}}}},
               "shot_id": { "type": "string", "description": "Shot identifier (e.g., S01)" },
               "scene_id": { "type": "integer", "description": "Corresponding scene in script.scenes[]" },
               "panel_id": { "type": "integer", "description": "对应 storyboard panel 的 panel_id（编译器写入；批次 D / v0.32.0）— first_frame_ref 解析键：first_frame_p<panel_id>" },
@@ -712,6 +715,7 @@
     }
   },
   "$defs": {
+    "acting_decision": {"type": "object", "required": ["status", "reason"], "properties": {"status": {"enum": ["included", "not_applicable"]}, "reason": {"type": "string", "minLength": 1}, "text": {"type": "string"}, "actors": {"type": "array", "items": {"type": "string"}}}, "description": "Runtime acting_contract additionally validates inclusion text, visibility and final prompt coverage"},
     "trace_entry": {
       "type": "object",
       "description": "Segment-level traceability: maps a compiled prompt segment back to its source field and original text.",

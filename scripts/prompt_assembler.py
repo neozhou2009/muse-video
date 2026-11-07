@@ -353,6 +353,9 @@ def build_runway_prompts(project_state: dict) -> list:
 
 def assemble(project_state: dict) -> dict:
     """Main assembly function: Project State JSON → Creative Pack dict."""
+    if (project_state.get("model_compilation") or {}).get("shots"):
+        from acting_contract import validate_compilation
+        validate_compilation(project_state)
     # Build downstream tool configs
     comfyui = build_comfyui_workflow(project_state)
     hyperframes = build_hyperframes_config(project_state)

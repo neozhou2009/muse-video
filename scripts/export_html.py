@@ -290,6 +290,8 @@ def build_refs_html(image_refs: list, registry: dict, first_frame: str = None, l
 
 def export_compilation(project_state: dict, output_path: str) -> None:
     """Render script-compilation.html — Phase 7.5 compilation preview (reads model_compilation)."""
+    from acting_contract import validate_compilation
+    validate_compilation(project_state)
     script_dir = Path(__file__).resolve().parent.parent
     tpl_path = script_dir / "assets" / "templates" / "export" / "script-compilation.html"
     if tpl_path.exists():

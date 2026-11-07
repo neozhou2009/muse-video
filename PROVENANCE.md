@@ -16,3 +16,7 @@ python scripts/build_index.py --check --deps
 ```
 
 脚本依赖按原工作流安装 PyYAML、jsonschema；导出 Excel 时另需 openpyxl。示例 schema 检查按 .github/workflows/quality-gate.yml 执行。
+
+## v0.36.8 本地维护
+
+针对表演/反应字段在编译正文中静默丢失，增加适用性契约、逐分画覆盖与目标演员检查；接入组装和编译预览，CI增加12项回归测试。当前安装版已同步相同文件。该门禁证明交付不丢字段，不替代导演审稿或生成视听验收。
